@@ -87,7 +87,7 @@ public final class ArgumentParser {
 
     /**
      * Gets a bool from the flagArgumentHashMap, false if no value
-     * 
+     *
      * @param argumentName the character that represents the value
      * @return the value with key provided or false if nonexistent
      */
