@@ -28,12 +28,13 @@ public final class ArgumentParser {
     /**
      * Parses the line provided into the appropriate HashMaps,
      * to later be queried for values
+     *
      * @param line a command line string of format "-l string -flag -n 780"
      */
     public void parseArguments(final String line) throws ArgumentParseException{
         if(line == null) throw new IllegalArgumentException("line passed in cannot be null");
         String parsingLine = line.trim();
-        String[] splitLine = line.split("\\s+");
+        String[] splitLine = parsingLine.split("\\s+");
         //iterate over split line, parsing as we go
         for (int i = 0; i < splitLine.length; i++) {
             String temp = splitLine[i];
@@ -64,6 +65,7 @@ public final class ArgumentParser {
 
     /**
      * Gets an integer from the integerArgumentHashMap, null if no value
+     *
      * @param argumentName the character that represents the value
      * @return the value with key provided or null if nonexistent
      */
@@ -74,6 +76,7 @@ public final class ArgumentParser {
 
     /**
      * Gets a string from the stringArgumentHashMap, null if no value
+     *
      * @param argumentName the character that represents the value
      * @return the value with key provided or null if nonexistent
      */
@@ -84,6 +87,7 @@ public final class ArgumentParser {
 
     /**
      * Gets a bool from the flagArgumentHashMap, false if no value
+     * 
      * @param argumentName the character that represents the value
      * @return the value with key provided or false if nonexistent
      */
