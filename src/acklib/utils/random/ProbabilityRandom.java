@@ -28,6 +28,15 @@ public final class ProbabilityRandom {
     public ProbabilityRandom(){}
 
     /**
+     * Sets the seed of the random generator
+     * 
+     * @param seed seed for the random generator
+     */
+    public void setSeed(final long seed){
+        random.setSeed(seed);
+    }
+
+    /**
      * Returns a boolean where the chance of being true is
      * passed in, 0 being 0% and 1.0 being 100%
      *
