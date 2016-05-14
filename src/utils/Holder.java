@@ -23,7 +23,7 @@ public final class Holder <T> {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(final Object obj) {
         return obj != this && obj instanceof Holder && ((Holder) obj).data.equals(this.data);
     }
 

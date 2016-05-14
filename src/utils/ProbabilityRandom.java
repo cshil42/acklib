@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 public final class ProbabilityRandom {
 
-    private Random random = new Random(System.nanoTime());
+    private final Random random = new Random(System.nanoTime());
 
     public ProbabilityRandom(final long seed){
         random.setSeed(seed);
