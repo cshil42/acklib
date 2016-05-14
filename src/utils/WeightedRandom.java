@@ -4,6 +4,8 @@ import java.util.Random;
 
 /**
  * Created by Aedan Smith on 5/13/2016.
+ * 
+ * A static random class that has several functions to assist with weighted randomness.
  */
 
 public class WeightedRandom {
