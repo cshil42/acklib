@@ -1,5 +1,7 @@
 package acklib.utils.paths;
 
+import acklib.utils.os.OsUtils;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -21,12 +23,13 @@ public final class FileUtils {
      * @return  fileName is a valid filename on the platform
      */
     public static boolean validFilename(final String fileName){
-        try{    //ttry to make file and access path
-            File file = new File(fileName);
-            file.getCanonicalPath();
-        }catch (IOException ioe){   //unable to get path of file
-            return false;   //so filename is invalid
+        if(OsUtils.isWindows()){
+            return fileName.matches("^[^\"/\\\\\\|:><\\?\\*]+$");
+        }else if(OsUtils.isMac()){
+            return fileName.matches("^[^\\s:<>\\?\"\\\\/\\.,\\[\\]\\*'\\{\\}\\(\\)!]+$]");
+        }else if(OsUtils.isUnix() || OsUtils.isSolaris()){
+            return fileName.matches("^[^/]+$]");
         }
-        return true;    //valid file
+        return false;
     }
 }
