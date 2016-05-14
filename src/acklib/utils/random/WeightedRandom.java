@@ -1,4 +1,4 @@
-package utils.random;
+package acklib.utils.random;
 
 import java.util.Random;
 
