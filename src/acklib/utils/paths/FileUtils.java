@@ -22,7 +22,7 @@ public final class FileUtils {
      * @param fileName name of file
      * @return  fileName is a valid filename on the platform
      */
-    public static boolean validFilename(final String fileName){
+    public static boolean isValidFileName(final String fileName){
         if(OsUtils.isWindows()){
             return fileName.matches("^[^\"/\\\\\\|:><\\?\\*]+$");
         }else if(OsUtils.isMac()){
