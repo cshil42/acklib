@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="acklib:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/acklib_jar</output-path>
-    <root id="archive" name="acklib.jar">
-      <element id="module-output" name="acklib" />
-    </root>
-  </artifact>
-</component>
