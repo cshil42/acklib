@@ -18,6 +18,8 @@ public final class ProbabilityRandom {
         random.setSeed(seed);
     }
 
+    public ProbabilityRandom(){}
+
     /**
      * Allows for booleans that have a chance of being true
      *
