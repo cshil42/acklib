@@ -29,7 +29,7 @@ public final class ProbabilityRandom {
 
     /**
      * Sets the seed of the random generator
-     * 
+     *
      * @param seed seed for the random generator
      */
     public void setSeed(final long seed){
