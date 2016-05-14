@@ -25,6 +25,10 @@ public final class FileUtils {
     public static boolean validFilename(final String fileName){
         if(OsUtils.isWindows()){
             return fileName.matches("^[^\"/\\\\\\|:><\\?\\*]+$");
+        }else if(OsUtils.isMac()){
+            return fileName.matches("^[^\\s:<>\\?\"\\\\/\\.,\\[\\]\\*'\\{\\}\\(\\)!]+$]");
+        }else if(OsUtils.isUnix() || OsUtils.isSolaris()){
+            return fileName.matches("^[^/]+$]");
         }
         return false;
     }
