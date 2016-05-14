@@ -4,6 +4,8 @@ import java.util.Random;
 
 /**
  * Created by Aedan Smith on 5/13/2016.
+ * 
+ * A static Random class that can has a few more useful functions.
  */
 
 public class SmartRandom {
@@ -55,7 +57,8 @@ public class SmartRandom {
     }
 
     /*
-        All next<T> methods from the Random class. Saves output to last<T>.
+        All next<T> methods from the Random class, as well as a few new ones. Saves
+        output to last<T>.
      */
 
     public static int nextInt(){
@@ -65,6 +68,11 @@ public class SmartRandom {
 
     public static int nextInt(int max){
         SmartRandom.lastInt = random.nextInt(max);
+        return SmartRandom.lastInt;
+    }
+
+    public static int nextInt(int min, int max){
+        SmartRandom.lastInt = random.nextInt(max - min + 1) + min;
         return SmartRandom.lastInt;
     }
 
@@ -78,13 +86,45 @@ public class SmartRandom {
         return SmartRandom.lastDouble;
     }
 
+    public static double nextDouble(double max){
+        SmartRandom.lastDouble = random.nextDouble() * max;
+        return SmartRandom.lastDouble;
+    }
+
+    public static double nextDouble(double min, double max){
+        SmartRandom.lastDouble = nextDouble(max - min) + min;
+        return SmartRandom.lastDouble;
+    }
+
     public static float nextFloat(){
         SmartRandom.lastFloat = random.nextFloat();
         return SmartRandom.lastFloat;
     }
 
+    public static float nextFloat(float max){
+        SmartRandom.lastFloat = random.nextFloat() * max;
+        return SmartRandom.lastFloat;
+    }
+
+    public static float nextFloat(float min, float max){
+        SmartRandom.lastFloat = nextFloat(max - min) + min;
+        return SmartRandom.lastFloat;
+    }
+
     public static long nextLong(){
         SmartRandom.lastLong = random.nextLong();
+        return SmartRandom.lastLong;
+    }
+
+    public static long nextLong(long max) {
+        long l = (long) (random.nextLong() * ((double)max/Long.MAX_VALUE) + 1);
+        if (l < 0) l = -l;
+        SmartRandom.lastLong = l;
+        return SmartRandom.lastLong;
+    }
+
+    public static long nextLong(long min, long max){
+        SmartRandom.lastLong = nextLong(max - min) + min;
         return SmartRandom.lastLong;
     }
 
@@ -125,5 +165,5 @@ public class SmartRandom {
         SmartRandom is a static class. Do not construct it.
      */
     private SmartRandom(){}
-
+    
 }

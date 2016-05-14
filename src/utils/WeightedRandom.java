@@ -4,6 +4,8 @@ import java.util.Random;
 
 /**
  * Created by Aedan Smith on 5/13/2016.
+ * 
+ * A static random class that has several functions to assist with weighted randomness.
  */
 
 public class WeightedRandom {
@@ -70,6 +72,29 @@ public class WeightedRandom {
 
         // Default case, should never execute.
         return -1;
+    }
+
+    /**
+     * Returns either true or false given the weight of each, where the chance of
+     * returning true is trueWeight/(trueWeight+falseWeight) and the chance of
+     * returning false is falseWeight/(trueWeight+falseWeight).
+     * Ex: getWeightedBoolean(9, 1) would return true 9/10 times and false 1/10 times.
+     *
+     * Runs faster than getWeightedRandom(new int[]{trueWeight, falseWeight}).
+     *
+     * @param trueWeight: Integer weight of any size.
+     * @param falseWeight: Integer weight of any size.
+     * @return boolean: Returns a random boolean given the true and false weights.
+     */
+    public static boolean getWeightedBoolean(int trueWeight, int falseWeight){
+        // Gets the total value of the weights
+        int totalWeight = trueWeight + falseWeight;
+
+        // Selects a random int within the weight's bounds
+        int randInt = SmartRandom.nextInt(totalWeight);
+
+        // Returns if the random int is within the true or false bounds
+        return !(randInt >= trueWeight);
     }
 
     /*
