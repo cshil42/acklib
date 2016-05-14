@@ -37,7 +37,7 @@ public final class ProbabilityRandom {
      */
     public Stream<Boolean> createStream(final double chance){
         if(chance > 0.99 || chance < 0) throw new IllegalArgumentException("chance is invalid, must be in range [0, 1.0)");
-        return Stream.generate(()-> nextWeightedBoolean(chance));
+        return Stream.generate(()->nextWeightedBoolean(chance));
     }
 
     @Override
