@@ -4,6 +4,8 @@ import java.util.Random;
 
 /**
  * Created by Aedan Smith on 5/13/2016.
+ * 
+ * A static Random class that can has a few more useful functions.
  */
 
 public class SmartRandom {
