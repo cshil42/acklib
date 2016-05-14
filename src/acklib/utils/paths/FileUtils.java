@@ -2,9 +2,6 @@ package acklib.utils.paths;
 
 import acklib.utils.os.OsUtils;
 
-import java.io.File;
-import java.io.IOException;
-
 /**
  * @author hacke
  *
@@ -17,10 +14,10 @@ public final class FileUtils {
     private FileUtils(){}
 
     /**
-     * Returns whether or not a filename is valid or not, platform independent
+     * Returns whether or not a filename is valid, platform independent
      *
      * @param fileName name of file
-     * @return  fileName is a valid filename on the platform
+     * @return if fileName is a valid filename on the platform
      */
     public static boolean isValidFileName(final String fileName){
         if(OsUtils.isWindows()){
